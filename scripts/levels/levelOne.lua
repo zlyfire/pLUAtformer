@@ -30,9 +30,7 @@ function levelOne.update()
     physics.general(player1, solid)
   end
 
-  if keyboard:pressed("d") or keyboard:pressed("right") then
-    player1:setHVel(player1:getHVel()+1)
-  end
+  player1:controls()
 
   bkgColor = c_rock
 end

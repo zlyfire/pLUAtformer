@@ -3,8 +3,8 @@ local controls = {}
 function controls:newKB()
   local self = {
     buttons = {
-      w,a,s,d,
-      up,left,down,right
+      w=false,a=false,s=false,d=false,
+      ['up']=false,['left']=false,['down']=false,['right']=false
     },
     pbuttons = {}
   }
@@ -12,8 +12,8 @@ function controls:newKB()
   local updateButtons = function()
     local isDown = love.keyboard.isDown
     for k,v in pairs(self.buttons) do
-      self.pbuttons[v] = self.buttons[v]
-      self.buttons[v] = isDown(v)
+      self.pbuttons[k] = v
+      self.buttons[k] = isDown(k)
     end
   end
 
