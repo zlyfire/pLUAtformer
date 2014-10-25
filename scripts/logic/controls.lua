@@ -35,8 +35,8 @@ function controls:newKB()
 
   return {
     updateBtns = updateButtons,
-    edgePress = edgePressed,
-    edgeRelease = edgeReleased,
+    edgePressed = edgePressed,
+    edgeReleased = edgeReleased,
     pressed = pressed,
     released = released
   }

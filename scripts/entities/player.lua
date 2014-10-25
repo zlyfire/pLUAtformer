@@ -178,19 +178,15 @@ function player:new(origin, height, width, name, scale)
 
   local controls = function(me)
     if keyboard:pressed("d") or keyboard:pressed("right") then
-      me:setHVel(me:getHVel()+1)
+      me:setHVel(5)
+    elseif keyboard:pressed("a") or keyboard:pressed("left") then
+      me:setHVel(-5)
     else
       me:setHVel(0)
     end
 
-    if keyboard:pressed("a") or keyboard:pressed("left") then
-      me:setHVel(me:getHVel()-1)
-    else
-      me:setHVel(0)
-    end
-
-    if keyboard:edgePressed("w") or keyboard:edgePressed("up") then
-      --me:setHVel(me:getHVel()+1)
+    if (keyboard:edgePressed("w") or keyboard:edgePressed("up")) and self.onGround then
+      me:setVVel(20)
     else
       --me:setHVel(0)
     end
