@@ -1,4 +1,4 @@
 pLUAtformer
 ===========
 
-just a little LUA-based platformer using Love2D
+just a little Lua-based platformer using Love2D
